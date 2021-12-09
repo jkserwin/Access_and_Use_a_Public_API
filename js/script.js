@@ -7,7 +7,7 @@ const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 
-// fetch employee data from API
+// fetch employee data from API and create cards to display it
 
 fetch(urlAPI)
     .then(res => res.json())
@@ -40,6 +40,8 @@ function displayEmployees(employeeData) {
 
 }
 
+// displays a modal window with additional employee info from fetched data
+
 function displayModal(index) {
 
     let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
@@ -63,6 +65,7 @@ function displayModal(index) {
     modalContainer.innerHTML = modalHTML;
 }
 
+// event listener to display modal on click
 
 gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
@@ -72,6 +75,8 @@ gridContainer.addEventListener('click', e => {
         displayModal(index);
     }
 });
+
+// event listener to hide modal when close button is clicked
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
