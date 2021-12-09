@@ -4,19 +4,20 @@
     box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-}
-
 body {
     background-color: #ECECEC;
     color: black;
     font-family: 'Nunito', sans-serif;
     position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    min-height: 100%;
+    max-width: 1500px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 h1 {
@@ -38,8 +39,6 @@ h2 {
     justify-content: space-between;
     width: auto;
     max-width: 1500px;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .card {
@@ -83,7 +82,7 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(100, 100, 100, 0.4)
+    background: rgba(100, 100, 100, 0.6)
 }
 
 .modal {
