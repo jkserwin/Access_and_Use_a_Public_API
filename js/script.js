@@ -56,13 +56,14 @@ function displayModal(index) {
             <p class="address">${city}, ${state}</p>
             <hr />
             <p>${phone}</p>
-            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+            <p class="address">${street.number} ${street.name}.<br>${city}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+    modalContainer.setAttribute("data-index", index);
 }
 
 // event listener to display modal on click
